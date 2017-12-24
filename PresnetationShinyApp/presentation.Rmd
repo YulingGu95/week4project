@@ -1,0 +1,41 @@
+---
+title: "Developing Data Products - Week 4"
+author: "Yuling Gu"
+date: "December 24, 2017"
+output: ioslides_presentation
+---
+
+## Project Details
+- The dataset is from https://www.fueleconomy.gov/feg/ws/index.shtml#fuelType1 which contains each variable's information. 
+- Here is the data download link: https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip. 
+- In this Application you can visualize the car's fuel efficiency comparison within different models under the same brand. 
+- The Project is in Rstudio's shiny server: https://betty950303.shinyapps.io/zzntest/ 
+
+
+
+## Data Manipulation
+- Since the raw data is really large, I removed some unused variables and na values to make the dataset workable
+```{r}
+## dataset from:https://www.fueleconomy.gov/feg/download.shtml
+setwd("C:/Users/betty/Desktop/coursera/developing data products week4 assignment/Cars_Fuel_Efficiency_Comparison")
+veichles <- read.csv("vehicles.csv")
+myvars <-c("cylinders","displ","drive","feScore","fuelCost08","make","model","year","youSaveSpend")
+newdata <-veichles[myvars]
+newdata <- newdata[newdata$year>=2013,]
+
+##remove all na values in the dataset
+newdata <- newdata[complete.cases(newdata),]
+
+```
+
+## Summary of the dataset
+```{r}
+##Show information for clean dataset
+head(newdata)
+```
+
+## Visualization package used
+- In the shinny app, I use ggplot visualize some results
+- In addition, I use data.table for people to seach for conditions of each car's information
+- Thank You
+
