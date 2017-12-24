@@ -7,4 +7,4 @@ Here is the data download link: https://www.fueleconomy.gov/feg/epadata/vehicles
 
 The Project is in Rstudio's shiny server: https://betty950303.shinyapps.io/zzntest/ 
 
-And the presentation is at :
+And the presentation is at : http://rpubs.com/yulinggu/344188
